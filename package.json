@@ -1,0 +1,12 @@
+{
+  "name": "twitter-pm",
+  "version": "0.0.1",
+  "description": "A twitter PGP message passing bot.",
+  "main": "twitterPM.js",
+  "repository": {
+    "url": "git@github.com:LucasHill/TwitterPM.git",
+    "type": "git"
+  },
+  "author": "Lucas Hill <kingofallhills@gmail.com>",
+  "license": "MIT"
+}
