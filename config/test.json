@@ -1,0 +1,10 @@
+{
+  "Twitter": {
+    "oauth": {
+      "consumerKey": "consumer key!",
+      "consumerSecret": "consumer secret!",
+      "token": "the token!",
+      "tokenSecret": "the token secret!"
+    }
+  }
+}
