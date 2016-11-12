@@ -8,5 +8,14 @@
     "type": "git"
   },
   "author": "Lucas Hill <kingofallhills@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "config": "^1.24.0",
+    "mocha": "^3.1.2",
+    "request": "^2.78.0"
+  },
+  "scripts": {
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha"
+  }
 }
