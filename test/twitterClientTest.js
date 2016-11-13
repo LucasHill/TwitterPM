@@ -43,4 +43,19 @@ describe('Twitter Client', function() {
       twitterClient.directMessage('test message', 'foobar');
     });
   });
+
+  describe('#postTweet', function() {
+    it('sends the correct request', function(done) {
+      nock('https://api.twitter.com')
+        .post('/1.1/statuses/update.json')
+        .query(true)
+        .reply(201, function(url, requestBody) {
+          url.should.include('?status=test%20message');
+          requestBody.should.be.empty;
+          done();
+        });
+      
+      twitterClient.postTweet('test message');
+    });
+  });
 });
