@@ -11,4 +11,8 @@ describe('API Constants', function() {
     it('has the correct tweet API value', function() {
       apiConstants.should.have.property('POST_TWEET').equal('https://api.twitter.com/1.1/statuses/update.json');
     });
+
+    it('has the correct user stream API value', function() {
+      apiConstants.should.have.property('USER_STREAM').equal('https://userstream.twitter.com/1.1/user.json');
+    });
 });

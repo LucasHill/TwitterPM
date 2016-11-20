@@ -10,13 +10,18 @@
   "author": "Lucas Hill <kingofallhills@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bunyan": "^1.8.5",
     "chai": "^3.5.0",
     "config": "^1.24.0",
     "mocha": "^3.1.2",
     "mocha-jshint": "^2.3.1",
     "nock": "^9.0.2",
     "request": "^2.78.0",
-    "request-promise-native": "^1.0.3"
+    "request-promise-native": "^1.0.3",
+    "test-console": "^1.0.0",
+    "through2-filter": "^2.0.0",
+    "through2-map": "^3.0.0",
+    "through2-spy": "^2.0.0"
   },
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/.bin/mocha"
