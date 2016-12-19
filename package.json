@@ -19,6 +19,7 @@
     "nock": "^9.0.2",
     "request": "^2.78.0",
     "request-promise-native": "^1.0.3",
+    "sinon": "^1.17.6",
     "split2": "^2.1.0",
     "test-console": "^1.0.0",
     "through2-filter": "^2.0.0",
