@@ -58,4 +58,19 @@ describe('Twitter Client', function() {
       twitterClient.postTweet('test message');
     });
   });
+  
+  describe('#followUser', function() {
+    it('sends the correct request', function(done) {
+      nock('https://api.twitter.com')
+        .post('/1.1/friendships/create.json')
+        .query(true)
+        .reply(201, function(url, requestBody) {
+          url.should.include('?screen_name=foobar&follow=true');
+          requestBody.should.be.empty;
+          done();
+        });
+      
+      twitterClient.followUser('foobar');
+    });
+  });
 });

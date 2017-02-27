@@ -3,6 +3,7 @@
 const client = require('./lib/twitterClient.js');
 const config = require('config');
 const logger = require('./lib/logger');
+const pgpManager = require('./lib/pgpManager');
 
 const botQueue = require('kue').createQueue({
   prefix: 'botQueue',
@@ -30,7 +31,11 @@ function initUserStream() {
 function processFollowCommands() {
   botQueue.process('FOLLOW', async function(job, done){
     logger.info(`Job ${job.id} started.`);
-    await client.directMessage('Thanks for the follow!', job.data.target);
+    const screenName = job.data.target;
+
+    const keypair = await pgpManager.generateKeyPairForUser(screenName);
+    await client.directMessage(`Thanks for the follow!\n ${keypair.publicKeyArmored}`, screenName);
+    await client.followUser(screenName);
     done();
   });
 }
